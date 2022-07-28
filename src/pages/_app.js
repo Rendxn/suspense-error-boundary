@@ -2,7 +2,6 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import { SWRConfig } from "swr";
 import "tailwindcss/tailwind.css";
-import "../../mirage";
 
 let isClient = typeof window !== "undefined";
 
@@ -15,14 +14,6 @@ export default function App(props) {
 
   return (
     <>
-      <Head>
-        {process.env.NODE_ENV !== "production" && (
-          <script
-            dangerouslySetInnerHTML={{ __html: noOverlayWorkaroundScript }}
-          />
-        )}
-      </Head>
-
       {isClient && !isFirstRender ? (
         <SWRConfig
           value={{

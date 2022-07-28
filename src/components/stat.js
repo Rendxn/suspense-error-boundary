@@ -1,7 +1,5 @@
 import { ArrowSmDownIcon, ArrowSmUpIcon } from "@heroicons/react/solid";
 import useSWR from "swr";
-import Error from "./error";
-import Spinner from "./spinner";
 
 export default function Stat({ Icon, label, endpoint }) {
   let { data } = useSWR(endpoint, { suspense: true });
